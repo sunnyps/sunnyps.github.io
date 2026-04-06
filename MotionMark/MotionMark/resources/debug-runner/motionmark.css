@@ -517,7 +517,6 @@ body.showing-test-container.tiles-classic {
 }
 
 #overlay button {
-    margin: 2em auto;
     border-color: rgb(241, 241, 241);
     color: rgb(241, 241, 241);
 }
@@ -772,6 +771,19 @@ body.showing-test-graph header, body.showing-test-graph nav {
 
 #rawFPS circle {
     fill: rgb(250, 73, 37);
+}
+
+.cursor .mutFPS {
+    fill: rgb(73, 122, 221);
+}
+
+#mutFPS path {
+    stroke: rgba(73, 122, 221, .7);
+    stroke-width: 1px;
+}
+
+#mutFPS circle {
+    fill: rgb(73, 122, 221);
 }
 
 #complexity-graph .regression line {

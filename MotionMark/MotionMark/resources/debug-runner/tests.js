@@ -465,25 +465,32 @@ Suites.push(new Suite("Tentative 1.4 suite",
             name: "Stories"
         },
         {
+            url: "dev/alice/alice.html",
+            name: "Alice"
+        },
+        {
+            url: "dev/chess/chess.html",
+            name: "Chess"
+        },
+        {
             url: "dev/map-zoomer/map-zoomer.html",
             name: "Map Zoomer"
         },
         {
-            url: "dev/radial-chart/radial-chart.html",
-            name: "Canvas Radial Chart"
+            url: "dev/sheets/sheets.html",
+            name: "Sheets"
+        },
+        {
+            url: "dev/departements/departements.html",
+            name: "Départements"
         },
         {
             url: "dev/dashboard/dashboard.html",
             name: "Dashboard"
-        }
-    ]
-));
-
-Suites.push(new Suite("WebGL Suite",
-    [
+        },
         {
-            url: "webgl/fragment-hog.html",
-            name: "Fragment Hog"
+            url: "dev/filtering/filtering.html",
+            name: "Filtering"
         }
     ]
 ));

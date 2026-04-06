@@ -170,10 +170,15 @@ class Controller {
     {
         return samples[sampleTimeIndex][i] - samples[sampleTimeIndex][i - 1];
     }
+
+    _getFrameTime(samples, i)
+    {
+        return samples[sampleTimeIndex][i];
+    }
     
     _previousFrameComplexity(samples, i)
     {
-        if (i > 0)
+        if (i > 1)
             return this._getComplexity(samples, i - 1);
 
         return 0;
@@ -311,6 +316,22 @@ class Controller {
     }
 }
 
+function findNextComplexityIndex(controllerSamples, startIndex, endIndex) {
+    const currentComplexity = controllerSamples.getFieldInDatum(startIndex, Strings.json.complexity);
+    while (startIndex < endIndex) {
+        if (controllerSamples.getFieldInDatum(startIndex, Strings.json.complexity) != currentComplexity)
+            break;
+        startIndex++;
+    }
+    return startIndex;
+}
+
+function isBetween(x, A, B) {
+  const min = Math.min(A, B);
+  const max = Math.max(A, B);
+  return x >= min && x <= max;
+}
+
 class FixedController extends Controller {
     constructor(benchmark, options)
     {
@@ -399,6 +420,7 @@ class RampController extends Controller {
         super(benchmark, options);
         
         this.targetFPS = targetFPS;
+        this.preferredProfile = options["score-profile"];
 
         // Initially start with a tier test to find the bounds
         // The number of objects in a tier test is 10^|_tier|
@@ -489,6 +511,11 @@ class RampController extends Controller {
                 var nextTierComplexity = Math.max(Math.round(Math.pow(10, this._tier)), currentComplexity + 1);
                 stage.tune(nextTierComplexity - currentComplexity);
 
+                // If the next tier complexity couldn't be set, we've reached the maximum capacity for the test
+                if (stage.complexity() != nextTierComplexity) {
+                   this._maximumStageComplexity = stage.complexity();
+                }
+
                 // Some tests may be unable to go beyond a certain capacity. If so, don't keep moving up tiers
                 if (stage.complexity() - currentComplexity > 0 || nextTierComplexity == 1) {
                     this._tierStartTimestamp = timestamp;
@@ -519,6 +546,12 @@ class RampController extends Controller {
             else {
                 // If the browser is capable of handling the most complex version of the test, use that
                 this._maximumComplexity = currentComplexity;
+            }
+
+            if (this._maximumStageComplexity) {
+                // If we reached the maximum stage complexity, set the maximum such
+                // that the stage complexity is in the middle of the ramp.
+                this._maximumComplexity = Math.round(this._maximumStageComplexity * 1.25);
             }
             
             this._possibleMaximumComplexity = this._maximumComplexity;
@@ -586,10 +619,15 @@ class RampController extends Controller {
         for (var i = this._rampStartIndex; i < this._sampler.sampleCount; ++i) {
             if (this._getFrameType(this._sampler.samples, i) == Strings.json.mutationFrameType)
                 continue;
-            regressionData.push([ this._getComplexity(this._sampler.samples, i), this._getFrameLength(this._sampler.samples, i) ]);
+            regressionData.push(
+                [
+                    this._getComplexity(this._sampler.samples, i), 
+                    this._getFrameLength(this._sampler.samples, i),
+                    this._getFrameTime(this._sampler.samples, i)
+                ]);
         }
 
-        var regression = new Regression(regressionData, this._sampler.sampleCount - 1, this._rampStartIndex, { desiredFrameLength: this.frameLengthDesired });
+        var regression = new Regression(regressionData, this._sampler.sampleCount - 1, this._rampStartIndex, { desiredFrameLength: this.frameLengthDesired, preferredProfile: this.preferredProfile });
         this._rampRegressions.push(regression);
 
         var frameLengthAtMaxComplexity = regression.valueAt(this._maximumComplexity);
@@ -616,6 +654,12 @@ class RampController extends Controller {
             this._maximumComplexity = Math.max(Math.round(.8 * this._maximumComplexity), this._minimumComplexity + 5);
         }
 
+        if (this._maximumStageComplexity) {
+            // If we reached the maximum stage complexity, set the maximum such
+            // that the stage complexity is in the middle of the ramp.
+            this._maximumComplexity = Math.min(Math.round(this._maximumStageComplexity * 1.25), this._maximumComplexity);
+        }
+
         // Next ramp
         stage.tune(this._maximumComplexity - stage.complexity());
         this._rampDidWarmup = false;
@@ -629,36 +673,55 @@ class RampController extends Controller {
     {
         results[Strings.json.marks] = this._processMarks();
         // Have samplingTimeOffset represent time 0
-        var startTimestamp = this._marks[Strings.json.samplingStartTimeOffset].time;
+        const startTimestamp = this._marks[Strings.json.samplingStartTimeOffset].time;
         for (var markName in results[Strings.json.marks]) {
             results[Strings.json.marks][markName].time -= startTimestamp;
         }
 
         results[Strings.json.samples] = {};
 
-        var controllerSamples = this._processControllerSamples();
+        let controllerSamples = this._processControllerSamples();
         results[Strings.json.samples][Strings.json.controller] = controllerSamples;
         controllerSamples.forEach(function(timeSample) {
             controllerSamples.setFieldInDatum(timeSample, Strings.json.time, controllerSamples.getFieldInDatum(timeSample, Strings.json.time) - startTimestamp);
         });
 
         // Aggregate all of the ramps into one big complexity-frameLength dataset
-        var complexitySamples = new SampleData(controllerSamples.fieldMap);
+        let complexitySamples = new SampleData(controllerSamples.fieldMap);
         results[Strings.json.samples][Strings.json.complexity] = complexitySamples;
 
         results[Strings.json.controller] = [];
         this._rampRegressions.forEach(function(ramp) {
-            var startIndex = ramp.startIndex, endIndex = ramp.endIndex;
-            var startTime = controllerSamples.getFieldInDatum(startIndex, Strings.json.time);
-            var endTime = controllerSamples.getFieldInDatum(endIndex, Strings.json.time);
-            var startComplexity = controllerSamples.getFieldInDatum(startIndex, Strings.json.complexity);
-            var endComplexity = controllerSamples.getFieldInDatum(endIndex, Strings.json.complexity);
+            const startIndex = ramp.startIndex, endIndex = ramp.endIndex;
+            const startComplexity = controllerSamples.getFieldInDatum(startIndex, Strings.json.complexity);
+            const endComplexity = controllerSamples.getFieldInDatum(endIndex, Strings.json.complexity);
+            const inflectionComplexity = ramp.complexity;
 
-            var regression = {};
+            const regression = {};
             results[Strings.json.controller].push(regression);
 
-            var percentage = (ramp.complexity - startComplexity) / (endComplexity - startComplexity);
-            var inflectionTime = startTime + percentage * (endTime - startTime);
+            // Find the inflection point based on complexity
+            let inflectionIndex = startIndex;
+            let previousComplexity = startComplexity;
+            let currentComplexity = startComplexity;
+            while (inflectionIndex < endIndex) {
+                // We've found the inflection index when inflectionComplexity lands between the
+                // previousComplexity and currentComplexity. isBetween() is used to avoid making
+                // any assumptions about increasing or decreasing complexity order in the data.
+                if (isBetween(inflectionComplexity, previousComplexity, currentComplexity))
+                    break;
+
+                inflectionIndex = findNextComplexityIndex(controllerSamples, inflectionIndex, endIndex);
+                if (inflectionIndex == endIndex) {
+                    break;
+                }
+                previousComplexity = currentComplexity;
+                currentComplexity = controllerSamples.getFieldInDatum(inflectionIndex, Strings.json.complexity);
+            }
+            
+            const startTime = controllerSamples.getFieldInDatum(startIndex, Strings.json.time);
+            const endTime = controllerSamples.getFieldInDatum(endIndex, Strings.json.time);
+            const inflectionTime = controllerSamples.getFieldInDatum(inflectionIndex, Strings.json.time);
 
             regression[Strings.json.regressions.segment1] = [
                 [startTime, ramp.s2 + ramp.t2 * startComplexity],

@@ -1,0 +1,770 @@
+[
+  {
+    "name": "Ain",
+    "number": "01",
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Bourg-en-Bresse",
+    "area": 5762,
+    "population": 631877
+  },
+  {
+    "name": "Aisne",
+    "number": "02",
+    "region": "Hauts-de-France",
+    "capital": "Laon",
+    "area": 7369,
+    "population": 538659
+  },
+  {
+    "name": "Allier",
+    "number": "03",
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Moulins",
+    "area": 7340,
+    "population": 341613
+  },
+  {
+    "name": "Alpes-de-Haute-Provence",
+    "number": "04",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Digne",
+    "area": 6925,
+    "population": 161799
+  },
+  {
+    "name": "Hautes-Alpes",
+    "number": "05",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Gap",
+    "area": 5549,
+    "population": 140916
+  },
+  {
+    "name": "Alpes-Maritimes",
+    "number": "06",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Nice",
+    "area": 4299,
+    "population": 1082440
+  },
+  {
+    "name": "Ardèche",
+    "number": "07",
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Privas",
+    "area": 5529,
+    "population": 324209
+  },
+  {
+    "name": "Ardennes",
+    "number": "08",
+    "region": "Grand Est",
+    "capital": "Charleville-Mézières",
+    "area": 5229,
+    "population": 277752
+  },
+  {
+    "name": "Ariège",
+    "number": "09",
+    "region": "Occitanie",
+    "capital": "Foix",
+    "area": 4890,
+    "population": 152499
+  },
+  {
+    "name": "Aube",
+    "number": 10,
+    "region": "Grand Est",
+    "capital": "Troyes",
+    "area": 6004,
+    "population": 309056
+  },
+  {
+    "name": "Aude",
+    "number": 11,
+    "region": "Occitanie",
+    "capital": "Carcassonne",
+    "area": 6139,
+    "population": 366957
+  },
+  {
+    "name": "Aveyron",
+    "number": 12,
+    "region": "Occitanie",
+    "capital": "Rodez",
+    "area": 8735,
+    "population": 279169
+  },
+  {
+    "name": "Bouches-du-Rhône",
+    "number": 13,
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Marseille",
+    "area": 5088,
+    "population": 2016622
+  },
+  {
+    "name": "Calvados",
+    "number": 14,
+    "region": "Normandie",
+    "capital": "Caen",
+    "area": 5548,
+    "population": 693579
+  },
+  {
+    "name": "Cantal",
+    "number": 15,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Aurillac",
+    "area": 5726,
+    "population": 146219
+  },
+  {
+    "name": "Charente",
+    "number": 16,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Angoulême",
+    "area": 5956,
+    "population": 353613
+  },
+  {
+    "name": "Charente-Maritime",
+    "number": 17,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "La Rochelle",
+    "area": 6864,
+    "population": 639938
+  },
+  {
+    "name": "Cher",
+    "number": 18,
+    "region": "Centre-Val de Loire",
+    "capital": "Bourges",
+    "area": 7235,
+    "population": 308992
+  },
+  {
+    "name": "Corrèze",
+    "number": 19,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Tulle",
+    "area": 5857,
+    "population": 241871
+  },
+  {
+    "name": "Corse-du-Sud",
+    "number": "2A",
+    "region": "Corse",
+    "capital": "Ajaccio",
+    "area": 4014,
+    "population": 152730
+  },
+  {
+    "name": "Haute-Corse",
+    "number": "2B",
+    "region": "Corse",
+    "capital": "Bastia",
+    "area": 4666,
+    "population": 174553
+  },
+  {
+    "name": "Côte-d'Or",
+    "number": 21,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Dijon",
+    "area": 8763,
+    "population": 533147
+  },
+  {
+    "name": "Côtes-d'Armor",
+    "number": 22,
+    "region": "Bretagne",
+    "capital": "Saint-Brieuc",
+    "area": 6878,
+    "population": 598357
+  },
+  {
+    "name": "Creuse",
+    "number": 23,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Guéret",
+    "area": 5565,
+    "population": 120365
+  },
+  {
+    "name": "Dordogne",
+    "number": 24,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Périgueux",
+    "area": 9060,
+    "population": 415417
+  },
+  {
+    "name": "Doubs",
+    "number": 25,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Besançon",
+    "area": 5233,
+    "population": 536959
+  },
+  {
+    "name": "Drôme",
+    "number": 26,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Valence",
+    "area": 6530,
+    "population": 504637
+  },
+  {
+    "name": "Eure",
+    "number": 27,
+    "region": "Normandie",
+    "capital": "Évreux",
+    "area": 6040,
+    "population": 601948
+  },
+  {
+    "name": "Eure-et-Loir",
+    "number": 28,
+    "region": "Centre-Val de Loire",
+    "capital": "Chartres",
+    "area": 5880,
+    "population": 434035
+  },
+  {
+    "name": "Finistère",
+    "number": 29,
+    "region": "Bretagne",
+    "capital": "Quimper",
+    "area": 6733,
+    "population": 907796
+  },
+  {
+    "name": "Gard",
+    "number": 30,
+    "region": "Occitanie",
+    "capital": "Nîmes",
+    "area": 5853,
+    "population": 738189
+  },
+  {
+    "name": "Haute-Garonne",
+    "number": 31,
+    "region": "Occitanie",
+    "capital": "Toulouse",
+    "area": 6309,
+    "population": 1335103
+  },
+  {
+    "name": "Gers",
+    "number": 32,
+    "region": "Occitanie",
+    "capital": "Auch",
+    "area": 6257,
+    "population": 190932
+  },
+  {
+    "name": "Gironde",
+    "number": 33,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Bordeaux",
+    "area": 9976,
+    "population": 1548478
+  },
+  {
+    "name": "Hérault",
+    "number": 34,
+    "region": "Occitanie",
+    "capital": "Montpellier",
+    "area": 6101,
+    "population": 1120190
+  },
+  {
+    "name": "Ille-et-Vilaine",
+    "number": 35,
+    "region": "Bretagne",
+    "capital": "Rennes",
+    "area": 6775,
+    "population": 1042884
+  },
+  {
+    "name": "Indre",
+    "number": 36,
+    "region": "Centre-Val de Loire",
+    "capital": "Châteauroux",
+    "area": 6791,
+    "population": 224200
+  },
+  {
+    "name": "Indre-et-Loire",
+    "number": 37,
+    "region": "Centre-Val de Loire",
+    "capital": "Tours",
+    "area": 6127,
+    "population": 604966
+  },
+  {
+    "name": "Isère",
+    "number": 38,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Grenoble",
+    "area": 7432,
+    "population": 1251060
+  },
+  {
+    "name": "Jura",
+    "number": 39,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Lons-le-Saunier",
+    "area": 4999,
+    "population": 260587
+  },
+  {
+    "name": "Landes",
+    "number": 40,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Mont-de-Marsan",
+    "area": 9243,
+    "population": 403234
+  },
+  {
+    "name": "Loir-et-Cher",
+    "number": 41,
+    "region": "Centre-Val de Loire",
+    "capital": "Blois",
+    "area": 6343,
+    "population": 333050
+  },
+  {
+    "name": "Loire",
+    "number": 42,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Saint-Étienne",
+    "area": 4781,
+    "population": 759411
+  },
+  {
+    "name": "Haute-Loire",
+    "number": 43,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Le Puy-en-Velay",
+    "area": 4977,
+    "population": 227034
+  },
+  {
+    "name": "Loire-Atlantique",
+    "number": 44,
+    "region": "Pays de la Loire",
+    "capital": "Nantes",
+    "area": 6809,
+    "population": 1365227
+  },
+  {
+    "name": "Loiret",
+    "number": 45,
+    "region": "Centre-Val de Loire",
+    "capital": "Orléans",
+    "area": 6775,
+    "population": 673349
+  },
+  {
+    "name": "Lot",
+    "number": 46,
+    "region": "Occitanie",
+    "capital": "Cahors",
+    "area": 5217,
+    "population": 173400
+  },
+  {
+    "name": "Lot-et-Garonne",
+    "number": 47,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Agen",
+    "area": 5361,
+    "population": 333417
+  },
+  {
+    "name": "Lozère",
+    "number": 48,
+    "region": "Occitanie",
+    "capital": "Mende",
+    "area": 5167,
+    "population": 76309
+  },
+  {
+    "name": "Maine-et-Loire",
+    "number": 49,
+    "region": "Pays de la Loire",
+    "capital": "Angers",
+    "area": 7172,
+    "population": 810186
+  },
+  {
+    "name": "Manche",
+    "number": 50,
+    "region": "Normandie",
+    "capital": "Saint-Lô",
+    "area": 5938,
+    "population": 499287
+  },
+  {
+    "name": "Marne",
+    "number": 51,
+    "region": "Grand Est",
+    "capital": "Châlons-en-Champagne",
+    "area": 8162,
+    "population": 572293
+  },
+  {
+    "name": "Haute-Marne",
+    "number": 52,
+    "region": "Grand Est",
+    "capital": "Chaumont",
+    "area": 6211,
+    "population": 179154
+  },
+  {
+    "name": "Mayenne",
+    "number": 53,
+    "region": "Pays de la Loire",
+    "capital": "Laval",
+    "area": 5175,
+    "population": 307940
+  },
+  {
+    "name": "Meurthe-et-Moselle",
+    "number": 54,
+    "region": "Grand Est",
+    "capital": "Nancy",
+    "area": 5246,
+    "population": 734403
+  },
+  {
+    "name": "Meuse",
+    "number": 55,
+    "region": "Grand Est",
+    "capital": "Bar-le-Duc",
+    "area": 6211,
+    "population": 190626
+  },
+  {
+    "name": "Morbihan",
+    "number": 56,
+    "region": "Bretagne",
+    "capital": "Vannes",
+    "area": 6823,
+    "population": 744813
+  },
+  {
+    "name": "Moselle",
+    "number": 57,
+    "region": "Grand Est",
+    "capital": "Metz",
+    "area": 6216,
+    "population": 1044486
+  },
+  {
+    "name": "Nièvre",
+    "number": 58,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Nevers",
+    "area": 6817,
+    "population": 211747
+  },
+  {
+    "name": "Nord",
+    "number": 59,
+    "region": "Hauts-de-France",
+    "capital": "Lille",
+    "area": 5743,
+    "population": 2605238
+  },
+  {
+    "name": "Oise",
+    "number": 60,
+    "region": "Hauts-de-France",
+    "capital": "Beauvais",
+    "area": 5860,
+    "population": 821552
+  },
+  {
+    "name": "Orne",
+    "number": 61,
+    "region": "Normandie",
+    "capital": "Alençon",
+    "area": 6103,
+    "population": 286618
+  },
+  {
+    "name": "Pas-de-Calais",
+    "number": 62,
+    "region": "Hauts-de-France",
+    "capital": "Arras",
+    "area": 6671,
+    "population": 1472648
+  },
+  {
+    "name": "Puy-de-Dôme",
+    "number": 63,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Clermont-Ferrand",
+    "area": 7970,
+    "population": 647501
+  },
+  {
+    "name": "Pyrénées-Atlantiques",
+    "number": 64,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Pau",
+    "area": 7645,
+    "population": 670032
+  },
+  {
+    "name": "Hautes-Pyrénées",
+    "number": 65,
+    "region": "Occitanie",
+    "capital": "Tarbes",
+    "area": 4464,
+    "population": 228582
+  },
+  {
+    "name": "Pyrénées-Orientales",
+    "number": 66,
+    "region": "Occitanie",
+    "capital": "Perpignan",
+    "area": 4116,
+    "population": 471038
+  },
+  {
+    "name": "Bas-Rhin",
+    "number": 67,
+    "region": "Grand Est",
+    "capital": "Strasbourg",
+    "area": 4755,
+    "population": 1116658
+  },
+  {
+    "name": "Haut-Rhin",
+    "number": 68,
+    "region": "Grand Est",
+    "capital": "Colmar",
+    "area": 3525,
+    "population": 762607
+  },
+  {
+    "name": "Rhône",
+    "number": 69,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Lyon",
+    "area": 3249,
+    "population": 1821995
+  },
+  {
+    "name": "Haute-Saône",
+    "number": 70,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Vesoul",
+    "area": 5360,
+    "population": 237706
+  },
+  {
+    "name": "Saône-et-Loire",
+    "number": 71,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Mâcon",
+    "area": 8575,
+    "population": 555408
+  },
+  {
+    "name": "Sarthe",
+    "number": 72,
+    "region": "Pays de la Loire",
+    "capital": "Le Mans",
+    "area": 6206,
+    "population": 568445
+  },
+  {
+    "name": "Savoie",
+    "number": 73,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Chambéry",
+    "area": 6028,
+    "population": 428204
+  },
+  {
+    "name": "Haute-Savoie",
+    "number": 74,
+    "region": "Auvergne-Rhône-Alpes",
+    "capital": "Annecy",
+    "area": 4388,
+    "population": 793938
+  },
+  {
+    "name": "Paris",
+    "number": 75,
+    "region": "Ile-de-France",
+    "capital": "Paris",
+    "area": 105,
+    "population": 2206488
+  },
+  {
+    "name": "Seine-Maritime",
+    "number": 76,
+    "region": "Normandie",
+    "capital": "Rouen",
+    "area": 6278,
+    "population": 1257699
+  },
+  {
+    "name": "Seine-et-Marne",
+    "number": 77,
+    "region": "Ile-de-France",
+    "capital": "Melun",
+    "area": 5915,
+    "population": 1390121
+  },
+  {
+    "name": "Yvelines",
+    "number": 78,
+    "region": "Ile-de-France",
+    "capital": "Versailles",
+    "area": 2284,
+    "population": 1427291
+  },
+  {
+    "name": "Deux-Sèvres",
+    "number": 79,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Niort",
+    "area": 5999,
+    "population": 374435
+  },
+  {
+    "name": "Somme",
+    "number": 80,
+    "region": "Hauts-de-France",
+    "capital": "Amiens",
+    "area": 6170,
+    "population": 571879
+  },
+  {
+    "name": "Tarn",
+    "number": 81,
+    "region": "Occitanie",
+    "capital": "Albi",
+    "area": 5758,
+    "population": 386543
+  },
+  {
+    "name": "Tarn-et-Garonne",
+    "number": 82,
+    "region": "Occitanie",
+    "capital": "Montauban",
+    "area": 3718,
+    "population": 255274
+  },
+  {
+    "name": "Var",
+    "number": 83,
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Toulon",
+    "area": 5973,
+    "population": 1048652
+  },
+  {
+    "name": "Vaucluse",
+    "number": 84,
+    "region": "Provence-Alpes-Côte d'Azur",
+    "capital": "Avignon",
+    "area": 3567,
+    "population": 557548
+  },
+  {
+    "name": "Vendée",
+    "number": 85,
+    "region": "Pays de la Loire",
+    "capital": "La Roche-sur-Yon",
+    "area": 6720,
+    "population": 666714
+  },
+  {
+    "name": "Vienne",
+    "number": 86,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Poitiers",
+    "area": 6990,
+    "population": 434887
+  },
+  {
+    "name": "Haute-Vienne",
+    "number": 87,
+    "region": "Nouvelle-Aquitaine",
+    "capital": "Limoges",
+    "area": 5520,
+    "population": 375795
+  },
+  {
+    "name": "Vosges",
+    "number": 88,
+    "region": "Grand Est",
+    "capital": "Épinal",
+    "area": 5874,
+    "population": 372016
+  },
+  {
+    "name": "Yonne",
+    "number": 89,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Auxerre",
+    "area": 7427,
+    "population": 340903
+  },
+  {
+    "name": "Territoire de Belfort",
+    "number": 90,
+    "region": "Bourgogne-Franche-Comté",
+    "capital": "Belfort",
+    "area": 609,
+    "population": 144483
+  },
+  {
+    "name": "Essonne",
+    "number": 91,
+    "region": "Ile-de-France",
+    "capital": "Évry",
+    "area": 1804,
+    "population": 1276233
+  },
+  {
+    "name": "Hauts-de-Seine",
+    "number": 92,
+    "region": "Ile-de-France",
+    "capital": "Nanterre",
+    "area": 176,
+    "population": 1601569
+  },
+  {
+    "name": "Seine-St-Denis",
+    "number": 93,
+    "region": "Ile-de-France",
+    "capital": "Bobigny",
+    "area": 236,
+    "population": 1592663
+  },
+  {
+    "name": "Val-de-Marne",
+    "number": 94,
+    "region": "Ile-de-France",
+    "capital": "Créteil",
+    "area": 245,
+    "population": 1372389
+  },
+  {
+    "name": "Val-d'Oise",
+    "number": 95,
+    "region": "Ile-de-France",
+    "capital": "Pontoise",
+    "area": 1246,
+    "population": 1215390
+  }
+]
